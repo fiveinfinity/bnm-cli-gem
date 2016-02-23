@@ -2,7 +2,16 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bnm`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+TODO:
+
+1. welcome message with title. Offer prompt with what commands are available.
+
+2. list artist / score
+3. prompt user to select an artist by number
+4. puts artist, album, score, with short review.
+5. prompt for full review, or to buy
+6. puts artist, album, score, full review, or launch browser.
+7. prompt to exit or to re-list artists.
 
 ## Installation
 
@@ -38,4 +47,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
