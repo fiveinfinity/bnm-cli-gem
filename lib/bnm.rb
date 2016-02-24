@@ -1,2 +1,6 @@
-require_relative "./bnm/version"
-require_relative "./bnm/cli"
+require 'open-uri'
+require 'pry'
+require 'nokogiri'
+
+require "bnm/version"
+require "bnm/cli"
