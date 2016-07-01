@@ -1,5 +1,3 @@
 #!/usr/bin/env ruby
-
 require './lib/bnm'
-
-Bnm::CLI.new.call
+Bnm::Init.new.call

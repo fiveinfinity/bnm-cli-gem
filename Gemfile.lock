@@ -6,6 +6,10 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.4.0)
+    htmlentities (4.3.4)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     rake (10.5.0)
 
 PLATFORMS
@@ -14,7 +18,9 @@ PLATFORMS
 DEPENDENCIES
   bnm!
   bundler (~> 1.11)
+  htmlentities (~> 4.3)
+  launchy
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
