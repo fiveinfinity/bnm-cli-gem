@@ -1,11 +1,10 @@
 module Bnm::CLI
 ############## INIT. INTERFACE #############################
   def self.launch(artists)
-    puts "-----------------------------------------------"
-    puts "    WELCOME TO PITCHFORK'S 'BEST NEW MUSIC'    "
-    puts "       LIST IS SORTED BY HIGHEST SCORE.        "
-    puts "         SELECT AN ARTIST BY NUMBER.           "
-    puts "-----------------------------------------------"
+    puts "---------------------------------------------------------------"
+    puts "    WELCOME TO PITCHFORK'S 'BEST NEW MUSIC' SORTED BY SCORE.   "
+    puts "         SELECT AN ARTIST BY NUMBER. NOW WITH APPLE MUSIC      "
+    puts "---------------------------------------------------------------"
     display_artist(artists)
     input = gets.chomp.to_i
     index = input - 1
@@ -31,28 +30,40 @@ module Bnm::CLI
     url = artists[index][:listen]
 
     puts("ARTIST: #{artists[index][:name]}  ALBUM: #{artists[index][:album]}  SCORE: #{artists[index][:score]}")
-    puts "-------------------------------"
-    puts "Would you like to see the article, listen, re-list, or exit 'Best New Music'?"
-    puts "(please type '1' for article, '2' to listen, '3' to re-list artists, or '4' to exit)"
+    puts "---------------------------------------------------------------------"
+    puts "1 for Apple Music"
+    puts "2 for article"
+    puts "3 for Amoeba Music"
+    puts "4 to re-list"
+    puts "5 to exit"
     input = gets.chomp
 
-    if input == '1'
-      puts "#{artists[index][:editorial]}"
+    if input == '1' && !artists[index][:itunes].nil?
+      Launchy.open("#{artists[index][:itunes]}")
       puts '########################################################'
       artist_page(input, index, artists)
-    elsif input == '2' && !url.nil?
-      Launchy.open("#{url}")
-      puts '########################################################'
-      artist_page(input, index, artists)
-    elsif input == '2' && url.nil?
+    elsif input == '1' && artists[index][:itunes].nil?
       puts '########################################################'
       puts 'There is no link available. Please choose another option'
       puts '########################################################'
       artist_page(input, index, artists)
-    elsif input == '3'
-      launch(artists)
-    elsif input == '4'
-      exit
+    elsif input == '2'
+       puts "#{artists[index][:editorial]}"
+       puts '########################################################'
+       artist_page(input, index, artists)
+     elsif input == '3' && !url.nil?
+        Launchy.open("#{url}")
+        puts '########################################################'
+        artist_page(input, index, artists)
+      elsif input == '3' && url.nil?
+        puts '########################################################'
+        puts 'There is no link available. Please choose another option'
+        puts '########################################################'
+        artist_page(input, index, artists)
+      elsif input == '4'
+        launch(artists)
+      elsif input == '5'
+        exit
     end
   end
 end

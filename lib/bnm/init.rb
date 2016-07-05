@@ -10,6 +10,7 @@ class Bnm::Init
   def call
     @artists = Bnm::Scrape.init_scrape(@@url)
     Bnm::Scrape.deep_scrape(@artists)
+    Bnm::API.itunes(@artists)
     Bnm::CLI.launch(@artists)
   end
 end
