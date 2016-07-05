@@ -39,7 +39,7 @@ module Bnm::CLI
     input = gets.chomp
 
     if input == '1' && !artists[index][:itunes].nil?
-      Launchy.open("#{artists[index][:itunes]}")
+      system('open', artists[index][:itunes])
       puts '########################################################'
       artist_page(input, index, artists)
     elsif input == '1' && artists[index][:itunes].nil?
@@ -52,7 +52,7 @@ module Bnm::CLI
        puts '########################################################'
        artist_page(input, index, artists)
      elsif input == '3' && !url.nil?
-        Launchy.open("#{url}")
+        system('open', url)
         puts '########################################################'
         artist_page(input, index, artists)
       elsif input == '3' && url.nil?

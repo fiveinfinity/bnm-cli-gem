@@ -12,8 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Pitchfork's Best New Music including scores, articles, and links to Amoeba Music.}
   spec.license       = "MIT"
 
-  # spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.files         = Dir['lib/**/*.rb'] + Dir['bin/*']
+  spec.files         = Dir['lib/*'] + Dir['bin/*']
   spec.executables   = ["bnm"]
   spec.homepage      = "https://github.com/fiveinfinity/bnm-cli-gem.git"
   spec.license       = "MIT"
@@ -22,9 +21,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "htmlentities", "~> 4.3"
-  spec.add_development_dependency "launchy", '~> 0'
   spec.add_development_dependency "faraday"
-  spec.add_development_dependency "rspec"
   spec.add_development_dependency "nokogiri"
+  spec.add_development_dependency "rspec"
   spec.add_development_dependency "pry"
+
+  spec.add_runtime_dependency "bundler", "~> 1.11"
+  spec.add_runtime_dependency "rake", "~> 10.0"
+  spec.add_runtime_dependency "htmlentities", "~> 4.3"
+  spec.add_runtime_dependency "faraday"
+  spec.add_runtime_dependency "nokogiri"
 end

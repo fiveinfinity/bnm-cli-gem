@@ -1,7 +1,13 @@
 PATH
   remote: .
   specs:
-    bnm (0.2.1)
+    bnm (0.2.4)
+      bundler (~> 1.11)
+      faraday
+      htmlentities (~> 4.3)
+      launchy (~> 0)
+      nokogiri
+      rake (~> 10.0)
 
 GEM
   remote: https://rubygems.org/

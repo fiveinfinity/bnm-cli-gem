@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'htmlentities'
 require 'open-uri'
-require 'launchy'
 require 'pry'
 
 module Bnm::Scrape
