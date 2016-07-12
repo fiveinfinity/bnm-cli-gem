@@ -9,7 +9,12 @@ module Bnm::CLI
     input = gets.chomp.to_i
     index = input - 1
 
-    artist_page(input, index, artists)
+    if input < 1 || input > 24
+      puts 'THAT IS NOT A VALID CHOICE! PLEASE CHOOSE AGAIN'
+      launch(artists)
+    else
+      artist_page(input, index, artists)
+    end
   end
 
 #####################DISPLAYS ARTIST UPON GEM LAUNCH######
@@ -64,6 +69,8 @@ module Bnm::CLI
         launch(artists)
       elsif input == '5'
         exit
+      else
+        launch(artists)
     end
   end
 end

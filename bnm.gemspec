@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["fiveinfinity"]
   spec.email         = ["jlachance1@gmail.com"]
 
-  spec.summary       = %q{Pitchfork's Best New Music including scores, articles, and links to Amoeba Music.}
+  spec.summary       = %q{Pitchfork's Best New Music including scores, articles, and links to Amoeba Music & Apple Music.}
   spec.license       = "MIT"
 
   spec.files         = Dir['lib/*'] + Dir['bin/*']
