@@ -4,15 +4,19 @@ module Bnm::CLI
     puts "---------------------------------------------------------------"
     puts "    WELCOME TO PITCHFORK'S 'BEST NEW MUSIC' SORTED BY SCORE.   "
     puts "         SELECT AN ARTIST BY NUMBER. NOW WITH APPLE MUSIC      "
+    puts "                  OR PRESS ANY LETTER TO EXIT                  "
     puts "---------------------------------------------------------------"
     display_artist(artists)
-    input = gets.chomp.to_i
-    index = input - 1
 
-    if input < 1 || input > 24
+    input = Integer(gets.chomp) rescue nil
+
+    if input == nil
+      exit
+    elsif input < 1 || input > 24
       puts 'THAT IS NOT A VALID CHOICE! PLEASE CHOOSE AGAIN'
       launch(artists)
     else
+      index = input - 1
       artist_page(input, index, artists)
     end
   end
