@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "htmlentities", "~> 4.3"
   spec.add_development_dependency "faraday"
   spec.add_development_dependency "nokogiri"
+  spec.add_development_dependency "colorize"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "pry"
 
@@ -32,4 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "htmlentities", "~> 4.3"
   spec.add_runtime_dependency "faraday"
   spec.add_runtime_dependency "nokogiri"
+  spec.add_runtime_dependency "colorize"
+
 end
